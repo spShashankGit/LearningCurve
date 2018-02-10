@@ -12,8 +12,12 @@
     <script src="./vendor/angular-mocks.js"></script>
     <script src="./vendor/angular-route.js"></script>
     <script src="./dist/assets/scripts/app/app.js"></script>
-    <script src="./dist/assets/scripts/app/models/productManagement/product.js"></script>
+    <script src="./dist/assets/scripts/app/models/product/product.js"></script>
     <script src="./dist/assets/scripts/app/modules/productList/productList.controller.js"></script>
+    <script src="./dist/assets/scripts/app/modules/common/services/common.service.js"></script>
+    <script src="./dist/assets/scripts/app/modules/common/services/dataAccess.service.js"></script>
+    <script src="./dist/assets/scripts/app/modules/serviceMocks/productResource.mock.js"></script>
+    <script src="./dist/assets/scripts/app/modules/productDetail/productDetail.controller.js"></script>
 </head>
 
 <body ng-app="productManagement">
@@ -26,7 +30,7 @@
     </nav>
 
     <div class="container">
-        <div ng-include="'./src/assets/scripts/app/modules/productList/productListView.html'"></div>
+        <ng-view></ng-view>
     </div>
 
     <!-- Library Scripts -->
