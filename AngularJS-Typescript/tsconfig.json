@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "sourceMap": true,
+    "noImplicitAny": true,
     "module": "commonjs",
-    "rootDir": "./src",
-    "outDir": "./dist"
+    "target": "es6",
+    "removeComments": false,
+    "baseUrl": "src/assets/scripts/app",
+    "typeRoots": ["./node_modules/@types/**/*"]
   },
   "exclude": ["node_modules"]
 }

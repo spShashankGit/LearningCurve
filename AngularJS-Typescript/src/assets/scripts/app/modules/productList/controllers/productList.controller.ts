@@ -1,34 +1,31 @@
-namespace app.productList {
-  interface IProductListModel {
-    title: string;
-    showImage: boolean;
-    products: app.domain.IProduct[];
-    toggleImage(): void;
+import { IProduct } from "./../../../models/product/product";
+import { IDataAccessService } from "./../../common/services/dataAccess.service";
+
+interface IProductListModel {
+  title: string;
+  showImage: boolean;
+  products: IProduct[];
+  toggleImage(): void;
+}
+
+export default class ProductListController implements IProductListModel {
+  title: string;
+  showImage: boolean;
+  products: IProduct[];
+
+  static $inject = ["dataAccessService"];
+  constructor(private dataAccessService: IDataAccessService) {
+    this.title = "Product List";
+    this.showImage = false;
+    this.products = [];
+
+    let productResource = dataAccessService.getProductResource();
+    productResource.query((data: IProduct[]) => {
+      this.products = data;
+    });
   }
 
-  class ProductListController implements IProductListModel {
-    title: string;
-    showImage: boolean;
-    products: app.domain.IProduct[];
-
-    static $inject = ["dataAccessService"];
-    constructor(private dataAccessService: app.common.IDataAccessService) {
-      this.title = "Product List";
-      this.showImage = false;
-      this.products = [];
-
-      let productResource = dataAccessService.getProductResource();
-      productResource.query((data: app.domain.IProduct[]) => {
-        this.products = data;
-      });
-    }
-
-    toggleImage(): void {
-      this.showImage = !this.showImage;
-    }
+  toggleImage(): void {
+    this.showImage = !this.showImage;
   }
-
-  angular
-    .module("productManagement")
-    .controller("ProductListController", ProductListController);
 }
