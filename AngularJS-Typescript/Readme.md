@@ -10,6 +10,10 @@
 * Prettier
 * ESLint
 * TSLint
+* Bracket Pair Colorizer
+* Guides
+* Git Lens
+* Material Icon Theme
 
 ### Setting up GitHub using SSH
 
