@@ -5,15 +5,16 @@
 ##### Add the following extensions
 
 * Debugger For Chrome
-* Live Server
 * Path Intellisense
 * Prettier
-* ESLint
 * TSLint
 * Bracket Pair Colorizer
 * Guides
 * Git Lens
 * Material Icon Theme
+* npm
+* npm intellisense
+* Winter is coming theme
 
 ### Setting up GitHub using SSH
 
