@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from './product';
+import { ISampleModel } from '../models/sampleModel';
 
 @Component({
   selector: 'pm-products',
@@ -10,6 +11,7 @@ export class ProductListComponent implements OnInit {
   pageTitle: string = 'Product List';
   filteredProducts: IProduct[];
   _listFilter: string = 'cart';
+  private sampleModel: ISampleModel = <ISampleModel>{};
   get listFilter(): string {
     return this._listFilter;
   }
@@ -55,7 +57,8 @@ export class ProductListComponent implements OnInit {
     this.showImage = !this.showImage;
   }
   ngOnInit(): void {
-    console.log('Method not implemented.');
+    this.sampleModel.age = 23;
+    console.log(this.sampleModel.age);
   }
   performFilter(filterValue: string): IProduct[] {
     filterValue = filterValue.toLowerCase();
