@@ -9,10 +9,9 @@ namespace WebApi.Controllers
     public class HomeController : ControllerBase
     {
         [HttpGet]
-        public IActionResult Greetings()
+        public string Greetings()
         {
-            return Ok("Hello from ASP.NET Core Web API.");
+            return "Successful!";
         }
-
     }
 }
