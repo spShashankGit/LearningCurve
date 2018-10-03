@@ -35,6 +35,6 @@
 /ClientSide/Thumbs.db
 
 # Web Api Files
-/WebApi/bin/
-/WebApi/obj/
-/WebApi/packages/
+/WebApi/bin
+/WebApi/obj
+/WebApi/packages
