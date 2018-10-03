@@ -33,3 +33,8 @@
 # System Files
 /ClientSide/.DS_Store
 /ClientSide/Thumbs.db
+
+# Web Api Files
+/WebApi/bin/
+/WebApi/obj/
+/WebApi/packages/
