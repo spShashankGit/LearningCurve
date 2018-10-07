@@ -7,6 +7,9 @@
 1. Building the project -> `ng build`
    1. For Prod -> `ng build --prod`
 1. Running the project -> `npm start`
+1. After setting up WebApi
+   1. Open _angular.json_
+   1. Change _outputPath_ to `<your_web_api_wwwroot_folder>`
 
 ### Setting Up Dot Net Core Web API
 
