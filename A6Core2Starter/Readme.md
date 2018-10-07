@@ -1,4 +1,6 @@
-## Setting Up Front End
+## Setting Up Project and Infrastructure
+
+### Setting Up Front End
 
 1. Download & Install Node.js
    1. Update NPM -> `npm i -g npm`
