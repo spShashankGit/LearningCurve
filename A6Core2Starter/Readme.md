@@ -15,7 +15,7 @@
 
 1. Download & Install .Net Core
    1. Download .Net Core SDK
-2. Download .Net Core Runtime
+2. Download & Install .Net Core Runtime
 3. Setup .Net Core Web API
    1. Install C# Plugin in VSCode
    2. CD into `<webapi_folder>`
@@ -53,7 +53,7 @@
 
 1. Open Termninal -> CD to Angular Project -> `npm start`
 2. Open Launch.json
-   1. In Chrome Launch Configuration -> change url -> `Web Api localhost`
+   1. In Chrome Launch Configuration -> change url -> `<your_web_api_localhost_url>`
 3. Launch from Debug Menu
 4. Click 3 dots in Debug Menu, select _Start additional session_
 5. Select .NetCore: Attach
@@ -66,10 +66,11 @@
 
 1. Goto Control Panel -> Uninstall a program
 2. Click Turn Windows Features On or Off
-3. Turn features on for IIS
-4. Add new Website or an app under Default Website
-5. Change new AppPool or DefaultAppPool Basic Settings -> .Net CLR Version ---> No Managed Code
-6. Download & Install WebDeploy
+3. Open IIS
+4. Turn features on for IIS
+5. Add new Website or an app under Default Website
+6. Change new AppPool or DefaultAppPool Basic Settings -> .Net CLR Version ---> No Managed Code
+7. Download & Install WebDeploy
 
 #### Jenkins
 
