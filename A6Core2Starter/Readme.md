@@ -95,3 +95,43 @@
    3. Execute Windows Batch Command
       1. `"C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -verb:sync -source:IisApp='%WORKSPACE%\<path_to_publish_folder_specified_above>' -dest:iisapp='<site_name>',computerName='<your_PC_name>' -enableRule:AppOffline`
 10. Build Now
+
+#### Continous Integration & Continous Deployment
+
+##### Trigger jobs in Jenkins on Push & Pull events in your GitHub Repo
+
+1. Setting up GitHub
+
+   1. Create Secret Token
+      1. Goto Account Settings -> Developer Settings
+      2. Goto Personal Access Token -> Create Token
+      3. Give All Access except Delete Repo
+      4. Copy the Secret Text (as it won't be available later)
+   2. Create WebHook
+      1. Goto Repo Settings -> Webhooks
+      2. Create a webhook
+      3. Enter your jenkins hook URL -> <http(s)://your_jenkins_url/github-webhook/>
+      4. Enter Secret Text in the text field
+      5. Choose from Individual Events -> Push Events & Pull Request Events
+
+2. Setting up Jenkins
+
+   1. Configure GitHub in Jenkins
+      1. Goto Manage Jenkins -> Configure System
+      2. Goto GitHub Server -> Add Server
+      3. Add Credentials -> Choose Secret Text
+      4. Copy the secret text copied from GitHub
+      5. Manage Hooks -> Check (Jenkins will create hook URL for you which is mentioned above).
+      6. Manage Hooks -> Disabled -> Enable Override default hook URL -> Enter <your_webhook_url> configured in GitHub Webhook
+      7. Save
+   2. Open Freestyle Job -> Configure
+      1. Enable `GitHub hook trigger for GITScm polling` (Under Build Triggers)
+      2. Well, that's it! You are all setup for CI/CD.
+
+3. Setting up your local Jenkins
+
+   1. This step is for localhost Jenkins, if you do not have an online Jenkins server
+   2. Download ngrok for Windows
+   3. Launch ngrok.exe -> ngrok http `<your_jenkins_port>`
+   4. Copy the genrated URL to your GitHub Webhook -> URL -> Hit Update
+   5. Now GitHub would be able to find your lcoal Jenkins on Internet and Jenkins would receive GitHub events.
