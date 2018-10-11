@@ -105,14 +105,15 @@
    1. Create Secret Token
       1. Goto Account Settings -> Developer Settings
       2. Goto Personal Access Token -> Create Token
-      3. Give All Access except Delete Repo
+      3. Give All Access except Delete Repo -> Create
       4. Copy the Secret Text (as it won't be available later)
    2. Create WebHook
       1. Goto Repo Settings -> Webhooks
       2. Create a webhook
-      3. Enter your jenkins hook URL -> <http(s)://your_jenkins_url/github-webhook/>
+      3. Enter your jenkins hook URL -> `<http(s)://your_jenkins_url/github-webhook/>`
       4. Enter Secret Text in the text field
       5. Choose from Individual Events -> Push Events & Pull Request Events
+      6. Save
 
 2. Setting up Jenkins
 
@@ -121,8 +122,8 @@
       2. Goto GitHub Server -> Add Server
       3. Add Credentials -> Choose Secret Text
       4. Copy the secret text copied from GitHub
-      5. Manage Hooks -> Check (Jenkins will create hook URL for you which is mentioned above).
-      6. Manage Hooks -> Disabled -> Enable Override default hook URL -> Enter <your_webhook_url> configured in GitHub Webhook
+      5. If Manage Hooks -> Enabled (Jenkins will create hook URL for you which is mentioned above).
+      6. If Manage Hooks -> Disabled -> Enable Override default hook URL -> Enter `<your_webhook_url>` configured in GitHub Webhook
       7. Save
    2. Open Freestyle Job -> Configure
       1. Enable `GitHub hook trigger for GITScm polling` (Under Build Triggers)
