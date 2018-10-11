@@ -4,7 +4,7 @@
 
 - **Front End**
 
-  - Angular
+  - Angular 6
   - TypeScript
   - Material UI
   - Karma & Protactor
