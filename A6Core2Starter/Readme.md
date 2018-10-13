@@ -90,7 +90,7 @@
       1. `cd <angular_project_folder>`
       2. `npm install`
    2. Execute Windows Batch Command
-      1. cd <angular_project_folder>
+      1. `cd <angular_project_folder>`
       2. `npm run build -- --prod --vendor-chunk`
    3. Execute Windows Batch Command
       1. `cd <webapi_project_folder>`
