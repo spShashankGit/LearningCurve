@@ -1,4 +1,4 @@
-### Implementation of this WebApi with the following components - 
+### Implementation of this WebApi with the following components -
 
 - Autofac
 - Swashbuckle
