@@ -77,8 +77,9 @@
 #### Jenkins
 
 1. Download & Install Jenkins
-2. Manage Jenkins -> Global Tool Configuration
-3. Section for Git -> Point to your local git.exe
+2. Manage Jenkins -> Install Cloud Foundry Plugin
+3. Manage Jenkins -> Global Tool Configuration
+   1. Section for Git -> Point to _on premise_ git.exe
 4. Add Item
 5. Free Style Jobs
 6. Open Job -> Configure
@@ -88,13 +89,21 @@
    1. Execute Windows Batch Command
       1. `cd <angular_project_folder>`
       2. `npm install`
-      3. `ng build --prod`
    2. Execute Windows Batch Command
+      1. cd <angular_project_folder>
+      2. `npm run build -- --prod --vendor-chunk`
+   3. Execute Windows Batch Command
       1. `cd <webapi_project_folder>`
       2. `dotnet publish -c Production -o publish`
-   3. Execute Windows Batch Command
-      1. `"C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -verb:sync -source:IisApp='%WORKSPACE%\<path_to_publish_folder_specified_above>' -dest:iisapp='<site_name>',computerName='<your_PC_name>' -enableRule:AppOffline`
-10. Build Now
+10. Under Post Build Actions
+    1. Deploy to local IIS
+       1. Execute Windows Batch Command
+       2. `"C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -verb:sync -source:IisApp='%WORKSPACE%\<path_to_publish_folder_specified_above>' -dest:iisapp='<site_name>',computerName='<your_PC_name>' -enableRule:AppOffline`
+    2. Deploy to PCF
+       1. Add a post build action -> Push to Cloud Foundry -> Fill the details
+       2. If you do not have a manifest.yml file -> select Enter configuration in Jenkins -> Fill Details
+       3. Apply & Save
+11. Build Now
 
 #### Continous Integration & Continous Deployment
 
