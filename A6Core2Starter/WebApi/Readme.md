@@ -7,10 +7,6 @@
 - Unit Tests (xUnit)
 - Entity Framework
 
-#### .NET Core Standards
-
-[The Nerdery Labs .Net Core Standards](https://github.com/thenerdery/dot-net-standards/blob/master/DotNetCore.md)
-
 #### .Net Core Path
 
 - What is .Net Core?
