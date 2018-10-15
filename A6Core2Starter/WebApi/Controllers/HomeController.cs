@@ -11,7 +11,7 @@ namespace WebApi.Controllers
         [HttpGet]
         public string Greetings()
         {
-            return "Successful!";
+            return "Hi there!";
         }
     }
 }
