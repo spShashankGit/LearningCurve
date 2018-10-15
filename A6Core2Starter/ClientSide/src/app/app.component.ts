@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this._appService.sayHello().subscribe(result => {
-      this.greetings = result.text();
+      this.greetings = result.text() + result.statusText;
     });
   }
 }
