@@ -1,0 +1,7 @@
+applications:
+  - name: A6Core2Starter
+    memory: 512M
+    path: WebApi\publish
+    buildpack: https://github.com/cloudfoundry/dotnet-core-buildpack.git
+    host: A6Core2Starter
+    timeout: 120
