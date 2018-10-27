@@ -91,7 +91,7 @@
       2. `npm install`
    2. Execute Windows Batch Command
       1. `cd <angular_project_folder>`
-      2. `npm run build -- --prod --vendor-chunk`
+      2. `npm run build -- --prod --build-optimizer`
    3. Execute Windows Batch Command
       1. `cd <webapi_project_folder>`
       2. `dotnet publish -c Production -o publish`
