@@ -1,0 +1,6 @@
+[submodule "toDoList-Server"]
+	path = toDoList-Server
+	url = https://github.com/spShashankGit/toDoList-Server.git
+[submodule "server-node"]
+	path = server-node
+	url = https://github.com/spShashankGit/toDoList-Server.git
