@@ -8,9 +8,9 @@ import { Http, Response } from '@angular/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  greetings = '';
+  greetings = 'Learning Curve';
 
-  constructor(private _appService: AppService) {}
+  constructor(private _appService: AppService) { }
 
   ngOnInit(): void {
     this._appService.sayHello().subscribe(result => {
